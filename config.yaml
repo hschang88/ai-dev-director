@@ -9,14 +9,14 @@ head:
 
 builder:
   mode: proposal          # Builder returns whole files as JSON; the Director validates and writes them.
-  provider: antigravity   # Primary BUILDER: Google Antigravity CLI (failover: codex / claude)
-  model: antigravity-cli
-  executable: null        # Discovered automatically via resolve_cli('agy')
-
-reviewer:
-  provider: codex         # Primary REVIEWER: OpenAI Codex CLI (failover: claude)
+  provider: codex         # Primary BUILDER: OpenAI Codex CLI (failover: claude)
   model: codex-cli
   executable: null        # Discovered automatically via resolve_cli('codex')
+
+reviewer:
+  provider: claude        # Primary REVIEWER: Claude Code CLI (failover: codex)
+  model: claude-cli
+  executable: null        # Discovered automatically via resolve_cli('claude')
 
 timeouts:
   head: 300
