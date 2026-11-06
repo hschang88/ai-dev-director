@@ -140,7 +140,7 @@ void main(){
   float peak=max(col.r,max(col.g,col.b))+1e-4;                 // tone-map on the peak channel: bright stays coloured
   vec3 hue=col*((1.-exp(-peak*1.15))/peak);
   col=mix(hue,1.-exp(-col*1.15),.38);
-  vec2 v=vUv-.5;col*=1.-.42*dot(v,v)*1.6;
+  vec2 v=vUv-.5;col*=1.-.10*dot(v,v)*1.6;
   col+=(hash(vUv*uRes+fract(uTime)*91.7)-.5)*.022;
   o=vec4(max(col,0.),1.);
 }`;

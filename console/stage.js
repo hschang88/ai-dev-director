@@ -370,6 +370,7 @@ function setBroadcast(on){
 }
 function start(){
   Trinity.init($('trinity-canvas'),{onFrame});
+  const intro=$('intro');if(intro)intro.addEventListener('animationend',()=>intro.classList.add('done'),{once:true});
   if(params.get('broadcast')==='1'||attract)document.body.classList.add('broadcast');   // e.g. an OBS browser source: /?attract=1
   $('tab-stage').onclick=()=>setView('stage');$('tab-workshop').onclick=()=>setView('workshop');$('attention-go').onclick=()=>setView('workshop');
   $('top-project').onclick=async()=>{const b=$('top-project');if(b.disabled||replay)return;b.disabled=true;

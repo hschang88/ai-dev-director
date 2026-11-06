@@ -3,7 +3,7 @@
   --claude:#ff8a5c;--codex:#3df2c0;--agy:#6aa5ff;
   --ok:#5ef2b0;--bad:#ff6b7a;--warn:#ffc46b;
   --text:#eef3ff;--muted:#8fa0bd;--faint:#5c6b86;
-  --glass:rgba(9,13,24,.58);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);
+  --glass:rgba(9,13,24,.95);--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);
   --num:'Bahnschrift','Segoe UI Variable Display','Segoe UI',sans-serif;
   --body:'Pretendard','Segoe UI Variable Text','Segoe UI','Malgun Gothic',sans-serif;
   --actor:#9fb4d8;
@@ -14,7 +14,7 @@ body.trinity{word-break:keep-all;margin:0;background:#04060c;color:var(--text);f
 #trinity-canvas{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0}
 button{font:inherit;color:inherit;cursor:pointer}
 .kicker{font:600 10.5px/1 var(--num);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.glass{background:var(--glass);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(18px) saturate(1.35);-webkit-backdrop-filter:blur(18px) saturate(1.35);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 24px 60px rgba(0,0,0,.35)}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(4px) saturate(1.35);-webkit-backdrop-filter:blur(4px) saturate(1.35);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 24px 60px rgba(0,0,0,.35)}
 
 /* ---------- top bar */
 #topbar{position:fixed;z-index:5;top:0;left:0;right:0;height:60px;display:flex;align-items:center;gap:20px;padding:0 22px;background:linear-gradient(#04060ccc,#04060c00)}
@@ -84,7 +84,7 @@ body.broadcast button.meta-chip::after{content:""}
 .delivery-actions button:hover{filter:brightness(1.1)}
 .badge.run{color:var(--agy);border-color:var(--agy)}
 .feed{display:flex;flex-direction:column;gap:8px;min-height:0;flex:1}
-.feed ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;overflow:hidden;mask-image:linear-gradient(#000 70%,transparent)}
+.feed ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;overflow:hidden;mask-image:none}
 .feed li{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:12px;color:#c6d2e8;padding:6px 9px;border-radius:9px;background:rgba(255,255,255,.035);border-left:2px solid var(--dot,var(--faint))}
 .feed li.new{animation:slidein .55s cubic-bezier(.2,.8,.2,1)}
 .feed li b{font-weight:600;color:var(--dot,var(--text));white-space:nowrap}
@@ -159,7 +159,7 @@ body.broadcast .slot-role::after,body.replaying .slot-role::after{content:""}
 #stinger strong{font:800 clamp(54px,7.2vw,124px)/1 var(--body);letter-spacing:.04em;color:#fff;text-shadow:0 0 44px var(--c),0 0 120px var(--c),0 4px 30px #000}
 #stinger.show{animation:stinger 2.1s cubic-bezier(.2,.8,.2,1) both}
 @keyframes stinger{0%{opacity:0;transform:scale(1.5);filter:blur(16px)}16%{opacity:1;transform:scale(1);filter:blur(0)}68%{opacity:1;transform:scale(.98)}100%{opacity:0;transform:scale(.9);filter:blur(10px)}}
-#intro{position:fixed;z-index:8;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;pointer-events:none;background:radial-gradient(circle,#04060c00 30%,#04060c 78%);animation:introout 3.4s ease both}
+#intro{position:fixed;z-index:8;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;pointer-events:none;background:none;animation:introout 3.4s ease both}
 #intro span{font:600 15px var(--num);letter-spacing:.9em;margin-right:-.9em;color:#c6d2e8;animation:introtext 3.4s ease both}
 #intro strong{font:800 clamp(44px,6.4vw,104px)/1 var(--num);letter-spacing:.18em;margin-right:-.18em;background:linear-gradient(90deg,var(--claude),#fff 50%,var(--codex) 75%,var(--agy));-webkit-background-clip:text;background-clip:text;color:transparent;animation:introtext 3.4s .12s ease both}
 @keyframes introtext{0%{opacity:0;filter:blur(12px);transform:scale(1.25)}28%{opacity:1;filter:blur(0);transform:scale(1)}72%{opacity:1}100%{opacity:0;filter:blur(8px)}}
